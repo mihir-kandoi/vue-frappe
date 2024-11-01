@@ -127,7 +127,6 @@ const returnBook = async () => {
         <FormKit type="text" name="authors" label="Author" />
         <FormKit type="text" name="isbn" label="ISBN" />
         <FormKit type="text" name="publisher" label="Publisher" />
-        <FormKit type="text" name="authors" label="Author" />
         <FormKit type="number" name="qty" number="integer" label="No. of books you want to import" />
         <FormKit type="submit" label="Import" />
       </FormKit>
