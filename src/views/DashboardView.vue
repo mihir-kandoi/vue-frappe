@@ -97,7 +97,7 @@ const click_return = async (member, book) => {
 const returnBook = async () => {
   const response = await api.post(`transactions/${selectedTransaction.value}/return/`);
   if (response.status == 200) {
-    alert(`Book returned successfully. ${response['data'].penalty_applied == true ? 'Late penalty was applied' : ''}`);
+    alert(`Book returned successfully. ${response['data'].penalty_applied == true ? 'Late penalty was applied.' : ''}`);
   } else {
     alert("Something went wrong...");
   }
@@ -143,7 +143,7 @@ const returnBook = async () => {
     </Dialog>
 
     <Dialog v-model:visible="visible_return" modal header="Return a book" :style="{ width: '35rem' }"
-      @hide="books_for_return = []">
+      @hide="() => {books_for_return = []; transactions_list = []}">
       <FormKit type="form" :form-class="submitted ? 'hide' : 'show'" submit-label="Return" @submit="returnBook"
         :actions="false" #default="{ value }">
         <FormKit type="select" name="member" label="Select member" :options="members_for_return"
